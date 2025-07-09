@@ -1,194 +1,231 @@
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tonaxe</title>
-    <link rel="stylesheet" href="styles/main.css" />
+    <meta name="description"
+        content="Portfolio de Tonaxe – Desarrollador Full Stack especializado en Angular, .NET, SCSS y TypeScript. Con base en Barcelona." />
+    <meta name="author" content="Yassin Mennana" />
+    <meta name="keywords"
+        content="Tonaxe, desarrollador, full stack, Angular, .NET, JavaScript, TypeScript, SCSS, portfolio web" />
+    <meta name="robots" content="index, follow" />
+    <title>Tonaxe – Desarrollador Full Stack</title>
     <link rel="icon" type="image/png" href="images/avatarTonaxe.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/main.css" />
 </head>
 
 <body>
-    <header class="navbar">
-        <div class="container">
-            <div class="logo nav-link" data-section="inicio">tonaxe();</div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#" data-section="inicio" class="nav-link active">Inicio</a></li>
-                    <li><a href="#" data-section="sobre-mi" class="nav-link">Sobre mí</a></li>
-                    <li><a href="#" data-section="habilidades" class="nav-link">Habilidades</a></li>
-                    <li><a href="#" data-section="proyectos" class="nav-link">Proyectos</a></li>
-                    <li><a href="#" data-section="contacto" class="nav-link">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <section class="hero" id="inicio">
-            <div class="container hero-content">
-                <div class="hero-avatar">
-                    <img src="images/avatarTonaxe.png" alt="Yassin Mennana" class="avatar-glow" />
+    <div class="page-content">
+        <header class="navbar" role="banner">
+            <div class="container">
+                <div class="logo nav-link" data-section="inicio" aria-label="Inicio">tonaxe();</div>
+                <div class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" tabindex="0">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-                <div class="hero-text">
-                    <h1><span>Tonaxe</span></h1>
-                    <h2>Desarrollador Full Stack</h2>
-                    <p>Desarrollador enfocado en crear <strong>experiencias digitales</strong> atractivas, seguras y
-                        escalables.<br>
-                        Frontend moderno, backend robusto y un toque visual único.</p>
-                    <a href="#" data-section="proyectos" class="btn nav-link">Ver proyectos</a>
-                    <a href="images/CV_Yassin_Mennana.pdf" download class="btn-cv">Descargar CV</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="sobre-mi" id="sobre-mi">
-            <div class="container sobre-mi-content">
-                <div class="sobre-mi-texto">
-                    <h2 class="section-title">Sobre mí</h2>
-                    <p>¡Hola! Soy <strong>Tonaxe</strong>, desarrollador full stack con base en Barcelona.
-                        Combino creatividad y lógica para construir productos digitales elegantes, eficientes y
-                        funcionales.</p>
-                    <p>Me especializo en tecnologías como <strong>Angular, .NET, TypeScript y SCSS</strong>. Disfruto
-                        diseñar interfaces limpias y escribir código robusto del lado del servidor.</p>
-                    <p>Me motiva resolver problemas reales con soluciones bien pensadas y una experiencia de usuario
-                        intuitiva. Siempre estoy aprendiendo algo nuevo y buscando formas de mejorar como desarrollador.
-                    </p>
-                    <ul class="sobre-mi-lista">
-                        <li>Enfoque en código limpio y escalable</li>
-                        <li>Mentalidad de mejora continua</li>
-                        <li>Trabajo en equipo, comunicación y responsabilidad</li>
-                        <li>Experiencia en despliegue y cloud (Docker, Azure)</li>
+                <nav role="navigation" aria-label="Navegación principal">
+                    <ul class="nav-links" id="nav-links">
+                        <li><a href="#" data-section="inicio" class="nav-link active" aria-current="page">Inicio</a>
+                        </li>
+                        <li><a href="#" data-section="sobre-mi" class="nav-link">Sobre mí</a></li>
+                        <li><a href="#" data-section="habilidades" class="nav-link">Habilidades</a></li>
+                        <li><a href="#" data-section="proyectos" class="nav-link">Proyectos</a></li>
+                        <li><a href="#" data-section="contacto" class="nav-link">Contacto</a></li>
                     </ul>
-                </div>
-                <div class="sobre-mi-extra">
-                    <div class="info-box">
-                        <h3>Ubicación</h3>
-                        <p>Barcelona, España</p>
-                    </div>
-                    <div class="info-box">
-                        <h3>Stack Principal</h3>
-                        <p>Angular · .NET · SQL Server · SCSS</p>
-                    </div>
-                    <div class="info-box">
-                        <h3>Idiomas</h3>
-                        <p>Español (nativo), Inglés (profesional), Francés (básico), Catalán (avanzado)</p>
-                    </div>
-                </div>
+                </nav>
             </div>
-        </section>
+        </header>
 
-        <section class="habilidades" id="habilidades">
-            <div class="container">
-                <h2 class="section-title">Habilidades técnicas</h2>
-                <div class="skills-cards">
-                    <div class="skill-card"><img src="https://angular.io/assets/images/logos/angular/angular.svg">
-                        <h3>Angular</h3>
-                        <p>Avanzado</p>
+        <main role="main">
+            <section id="inicio" class="hero" aria-labelledby="titulo-inicio">
+                <div class="container hero-content">
+                    <div class="hero-avatar">
+                        <img src="images/avatarTonaxe.png" alt="Avatar de Yassin Mennana" class="avatar-glow"
+                            width="128" height="128" />
                     </div>
-                    <div class="skill-card"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/e/ee/.NET_Core_Logo.svg">
-                        <h3>.NET</h3>
-                        <p>Avanzado</p>
-                    </div>
-                    <div class="skill-card"><img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-original.svg">
-                        <h3>SQL Server</h3>
-                        <p>Intermedio</p>
-                    </div>
-                    <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg">
-                        <h3>Firebase</h3>
-                        <p>Intermedio</p>
-                    </div>
-                    <div class="skill-card"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg">
-                        <h3>JavaScript</h3>
-                        <p>Intermedio</p>
-                    </div>
-                    <div class="skill-card"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg">
-                        <h3>CSS3</h3>
-                        <p>Avanzado</p>
-                    </div>
-                    <div class="skill-card"><img
-                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg">
-                        <h3>SCSS</h3>
-                        <p>Avanzado</p>
-                    </div>
-                    <div class="skill-card"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
-                        <h3>GitHub</h3>
-                        <p>Avanzado</p>
-                    </div>
-                    <div class="skill-card"><img src="https://cdn.worldvectorlogo.com/logos/docker.svg">
-                        <h3>Docker</h3>
-                        <p>Intermedio</p>
-                    </div>
-                    <div class="skill-card"><img src="https://cdn.worldvectorlogo.com/logos/azure-1.svg">
-                        <h3>Azure</h3>
-                        <p>Intermedio</p>
-                    </div>
-                    <div class="skill-card"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968381.png">
-                        <h3>TypeScript</h3>
-                        <p>Avanzado</p>
-                    </div>
-                    <div class="skill-card"><img src="https://nodejs.org/static/images/logo.svg">
-                        <h3>Node.js</h3>
-                        <p>Intermedio</p>
+                    <div class="hero-text">
+                        <h1 id="titulo-inicio"><span>Tonaxe</span></h1>
+                        <h2>Desarrollador Full Stack</h2>
+                        <p>Desarrollador enfocado en crear <strong>experiencias digitales</strong> atractivas, seguras y
+                            escalables.<br>
+                            Frontend moderno, backend robusto y un toque visual único.</p>
+                        <a href="#" data-section="proyectos" class="btn nav-link">Ver proyectos</a>
+                        <a href="images/CV_Yassin_Mennana.pdf" download class="btn-cv"
+                            title="Descargar currículum en PDF">Descargar CV</a>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="proyectos" id="proyectos">
-            <div class="container">
-                <h2 class="section-title">Proyectos destacados</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <h3>DavxeShop</h3>
-                        <p class="project-type">Marketplace web completo</p>
-                        <p>Plataforma full stack para compraventa de segunda mano con autenticación JWT, chat en tiempo
-                            real y panel de administración.</p>
-                        <a href="https://github.com/Tonaxe/DavxeShop" target="_blank" class="btn-sm">Ver repositorio</a>
+            <section id="sobre-mi" class="sobre-mi" aria-labelledby="titulo-sobremi">
+                <div class="container sobre-mi-content">
+                    <div class="sobre-mi-texto">
+                        <h2 id="titulo-sobremi" class="section-title-aboutme">Sobre mí</h2>
+                        <p>¡Hola! Soy <strong>Tonaxe</strong>, desarrollador full stack con base en Barcelona. Combino
+                            creatividad y lógica para construir productos digitales elegantes, eficientes y funcionales.
+                        </p>
+                        <p>Me especializo en tecnologías como <strong>Angular, .NET, TypeScript y SCSS</strong>.
+                            Disfruto
+                            diseñar interfaces limpias y escribir código robusto del lado del servidor.</p>
+                        <p>Me motiva resolver problemas reales con soluciones bien pensadas y una experiencia de usuario
+                            intuitiva. Siempre estoy aprendiendo algo nuevo y buscando formas de mejorar como
+                            desarrollador.
+                        </p>
+                        <ul class="sobre-mi-lista">
+                            <li>Enfoque en código limpio y escalable</li>
+                            <li>Mentalidad de mejora continua</li>
+                            <li>Trabajo en equipo, comunicación y responsabilidad</li>
+                            <li>Experiencia en despliegue y cloud (Docker, Azure)</li>
+                        </ul>
                     </div>
-                    <div class="project-card">
-                        <h3>Tonfra’s Adventure</h3>
-                        <p class="project-type">Videojuego 2D en Godot</p>
-                        <p>Juego de aventuras y plataformas desarrollado en Godot Engine. Combina exploración, mecánicas
-                            de combate y puzles en un mundo retro con pixel art propio.</p>
-                        <a href="https://github.com/Tonaxe/TFGS-Tonfra-s-Adventure" target="_blank" class="btn-sm">Ver
-                            repositorio</a>
-                    </div>
-                    <div class="project-card">
-                        <h3>AppTonvides</h3>
-                        <p class="project-type">App Android con Java</p>
-                        <p>Reproductor de música. Hecho en Java con Android Studio, permite
-                            explorar archivos, crear playlists y controlar reproducción con una interfaz limpia y
-                            funcional.</p>
-                        <a href="https://github.com/Tonaxe/AppTonvides" target="_blank" class="btn-sm">Ver
-                            repositorio</a>
+                    <aside class="sobre-mi-extra">
+                        <div class="info-box">
+                            <h3>Ubicación</h3>
+                            <p>Barcelona, España</p>
+                        </div>
+                        <div class="info-box">
+                            <h3>Stack Principal</h3>
+                            <p>Angular · .NET · SQL Server · SCSS</p>
+                        </div>
+                        <div class="info-box">
+                            <h3>Idiomas</h3>
+                            <p>Español (nativo), Inglés (profesional), Francés (básico), Catalán (avanzado)</p>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <section id="habilidades" class="habilidades" aria-labelledby="titulo-habilidades">
+                <div class="container">
+                    <h2 id="titulo-habilidades" class="section-title">Habilidades técnicas</h2>
+                    <div class="skills-cards">
+                        <article class="skill-card"><img
+                                src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Logo Angular">
+                            <h3>Angular</h3>
+                            <p>Avanzado</p>
+                        </article>
+                        <article class="skill-card"><img
+                                src="https://upload.wikimedia.org/wikipedia/commons/e/ee/.NET_Core_Logo.svg"
+                                alt="Logo .NET">
+                            <h3>.NET</h3>
+                            <p>Avanzado</p>
+                        </article>
+                        <article class="skill-card"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-original.svg"
+                                alt="Logo SQL Server">
+                            <h3>SQL Server</h3>
+                            <p>Intermedio</p>
+                        </article>
+                        <article class="skill-card"><img
+                                src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="Logo Firebase">
+                            <h3>Firebase</h3>
+                            <p>Intermedio</p>
+                        </article>
+                        <article class="skill-card"><img
+                                src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg"
+                                alt="Logo JavaScript">
+                            <h3>JavaScript</h3>
+                            <p>Intermedio</p>
+                        </article>
+                        <article class="skill-card"><img
+                                src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="Logo CSS3">
+                            <h3>CSS3</h3>
+                            <p>Avanzado</p>
+                        </article>
+                        <article class="skill-card"><img
+                                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg"
+                                alt="Logo SCSS">
+                            <h3>SCSS</h3>
+                            <p>Avanzado</p>
+                        </article>
+                        <article class="skill-card"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+                                alt="Logo GitHub">
+                            <h3>GitHub</h3>
+                            <p>Avanzado</p>
+                        </article>
+                        <article class="skill-card"><img src="https://cdn.worldvectorlogo.com/logos/docker.svg"
+                                alt="Logo Docker">
+                            <h3>Docker</h3>
+                            <p>Intermedio</p>
+                        </article>
+                        <article class="skill-card"><img src="https://cdn.worldvectorlogo.com/logos/azure-1.svg"
+                                alt="Logo Azure">
+                            <h3>Azure</h3>
+                            <p>Intermedio</p>
+                        </article>
+                        <article class="skill-card"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968381.png"
+                                alt="Logo TypeScript">
+                            <h3>TypeScript</h3>
+                            <p>Avanzado</p>
+                        </article>
+                        <article class="skill-card"><img src="https://nodejs.org/static/images/logo.svg"
+                                alt="Logo Node.js">
+                            <h3>Node.js</h3>
+                            <p>Intermedio</p>
+                        </article>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="contacto" id="contacto">
-            <div class="container">
-                <h2 class="section-title">Contacto</h2>
-                <form id="contact-form">
-                    <input type="text" name="user_name" placeholder="Nombre" required />
-                    <input type="email" name="user_email" placeholder="Email" required />
-                    <textarea name="message" placeholder="Mensaje" required></textarea>
-                    <button type="submit" class="btn">Enviar</button>
-                </form>
-            </div>
-        </section>
-    </main>
+            <section id="proyectos" class="proyectos" aria-labelledby="titulo-proyectos">
+                <div class="container">
+                    <h2 id="titulo-proyectos" class="section-title">Proyectos destacados</h2>
+                    <div class="projects-grid">
+                        <article class="project-card">
+                            <h3>DavxeShop</h3>
+                            <p class="project-type">Marketplace web completo</p>
+                            <p>Plataforma full stack para compraventa de segunda mano con autenticación JWT, chat en
+                                tiempo
+                                real y panel de administración.</p>
+                            <a href="https://github.com/Tonaxe/DavxeShop" target="_blank" rel="noopener noreferrer"
+                                class="btn-sm">Ver repositorio</a>
+                        </article>
+                        <article class="project-card">
+                            <h3>Tonfra’s Adventure</h3>
+                            <p class="project-type">Videojuego 2D en Godot</p>
+                            <p>Juego retro con pixel art y mecánicas de plataformas y combate desarrollado en Godot
+                                Engine.
+                            </p>
+                            <a href="https://github.com/Tonaxe/TFGS-Tonfra-s-Adventure" target="_blank"
+                                rel="noopener noreferrer" class="btn-sm">Ver repositorio</a>
+                        </article>
+                        <article class="project-card">
+                            <h3>AppTonvides</h3>
+                            <p class="project-type">App Android con Java</p>
+                            <p>Reproductor de música con explorador de archivos, playlists y diseño intuitivo en Android
+                                Studio.</p>
+                            <a href="https://github.com/Tonaxe/AppTonvides" target="_blank" rel="noopener noreferrer"
+                                class="btn-sm">Ver repositorio</a>
+                        </article>
+                    </div>
+                </div>
+            </section>
 
-    <footer>
-        <p>&copy; 2025 Tonaxe – Todos los derechos reservados</p>
+            <section id="contacto" class="contacto" aria-labelledby="titulo-contacto">
+                <div class="container">
+                    <h2 id="titulo-contacto" class="section-title">Contacto</h2>
+                    <form id="contact-form" aria-label="Formulario de contacto">
+                        <label for="user_name">Nombre:</label>
+                        <input type="text" id="user_name" name="user_name" placeholder="Tu nombre" required />
+                        <label for="user_email">Email:</label>
+                        <input type="email" id="user_email" name="user_email" placeholder="Tu email" required />
+                        <label for="message">Mensaje:</label>
+                        <textarea id="message" name="message" placeholder="Escribe tu mensaje" required></textarea>
+                        <button type="submit" class="btn">Enviar</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2025 Tonaxe – Todos los derechos reservados</p>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -199,7 +236,6 @@
             const links = document.querySelectorAll('.nav-link');
             const sections = document.querySelectorAll('section');
             const contactForm = document.getElementById("contact-form");
-
 
             function showSection(id) {
                 sections.forEach(section => {
@@ -216,6 +252,7 @@
                     link.classList.toggle('active', link.dataset.section === id);
                 });
             }
+
             links.forEach(link => {
                 link.addEventListener('click', e => {
                     e.preventDefault();
@@ -229,15 +266,30 @@
             if (contactForm) {
                 contactForm.addEventListener("submit", function (e) {
                     e.preventDefault();
-
                     emailjs.sendForm("service_2rskqwd", "template_hrw471e", this)
                         .then(() => {
                             showSection("inicio");
+                            this.reset();
                         })
                         .catch(error => {
+                            console.error("Error al enviar:", error);
                         });
                 });
             }
+        });
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const navItems = document.querySelectorAll('.nav-link');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+
+        navItems.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('show');
+            });
         });
     </script>
 </body>

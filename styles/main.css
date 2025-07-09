@@ -17,12 +17,21 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font);
   scroll-behavior: smooth;
   line-height: 1.6;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 .container {
@@ -36,42 +45,10 @@ a {
   color: inherit;
 }
 
-.btn-cv {
-  padding: 0.7rem 1.6rem;
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(4px);
-  font-weight: 500;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-cv::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.15), transparent);
-  transition: left 0.4s ease;
-}
-
-.btn-cv:hover::before {
-  left: 100%;
-}
-
-.btn-cv:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
 .navbar {
   position: sticky;
   top: 0;
+  width: 100%;
   background: rgba(15, 23, 42, 0.9);
   backdrop-filter: blur(8px);
   z-index: 1000;
@@ -88,6 +65,22 @@ a {
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--accent);
+  cursor: pointer;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 24px;
+  height: 3px;
+  background-color: var(--accent);
+  border-radius: 3px;
+  transition: all 0.3s ease;
 }
 
 .nav-links {
@@ -99,7 +92,7 @@ a {
 .nav-links a {
   color: var(--text-light);
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover,
@@ -131,7 +124,13 @@ section.visible {
 
 .section-title {
   font-size: 2rem;
-  place-self: anchor-center;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.section-title-aboutme {
+  font-size: 2rem;
   color: var(--accent);
   margin-bottom: 2rem;
 }
@@ -149,13 +148,11 @@ section.visible {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  margin-top: 20px;
-  margin-bottom: 130px;
   gap: 3rem;
 }
 
 .hero-avatar {
-  flex: 1 1 400px;
+  flex: 1 1 300px;
   display: flex;
   justify-content: center;
 }
@@ -167,7 +164,6 @@ section.visible {
   border: 4px solid var(--accent);
   box-shadow: 0 0 35px var(--accent);
   object-fit: cover;
-  transition: transform 0.3s ease;
   animation: pulseGlow 2.5s infinite ease-in-out;
 }
 
@@ -190,9 +186,9 @@ section.visible {
 
 .hero-text h1 {
   font-size: 2.6rem;
-  color: #fff;
   font-weight: 700;
   margin-bottom: 0.3rem;
+  color: #fff;
 }
 
 .hero-text h1 span {
@@ -203,7 +199,6 @@ section.visible {
   font-size: 1.4rem;
   color: var(--text-light);
   margin-bottom: 1.2rem;
-  font-weight: 400;
 }
 
 .hero-text p {
@@ -213,18 +208,65 @@ section.visible {
   line-height: 1.7;
 }
 
-.btn {
-  background: var(--primary);
-  color: #fff;
+.btn,
+.btn-sm,
+.btn-cv {
   padding: 0.7rem 1.5rem;
   border-radius: var(--radius);
   font-weight: 600;
+  cursor: pointer;
   display: inline-block;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+  align-self: center;
+}
+
+.btn {
+  background: var(--primary);
+  color: #fff;
 }
 
 .btn:hover {
   background: var(--primary-dark);
+}
+
+.btn-sm {
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.85rem;
+}
+
+.btn-sm:hover {
+  background: var(--primary-dark);
+}
+
+.btn-cv {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  position: absolute;
+  overflow: hidden;
+  margin-left: 20px;
+}
+
+.btn-cv::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.4s ease;
+}
+
+.btn-cv:hover::before {
+  left: 100%;
+}
+
+.btn-cv:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .sobre-mi-content {
@@ -251,7 +293,6 @@ section.visible {
 .sobre-mi-lista {
   list-style: none;
   margin-top: 1rem;
-  padding-left: 0;
 }
 
 .sobre-mi-lista li {
@@ -262,10 +303,10 @@ section.visible {
 
 .sobre-mi-extra {
   flex: 1;
-  margin-bottom: 213px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-top: 5.5rem;
 }
 
 .info-box {
@@ -290,7 +331,6 @@ section.visible {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
-  align-items: stretch;
 }
 
 .skill-card {
@@ -299,8 +339,6 @@ section.visible {
   border-radius: var(--radius);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   text-align: center;
-  position: relative;
-  overflow: hidden;
   transform: translateY(20px);
   opacity: 0;
   animation: slideUp 0.6s ease forwards;
@@ -324,6 +362,7 @@ section.visible {
 .skill-card img {
   width: 48px;
   height: 48px;
+  justify-self: center;
   margin-bottom: 1rem;
 }
 
@@ -336,10 +375,6 @@ section.visible {
 .skill-card p {
   font-size: 0.9rem;
   color: var(--text-light);
-}
-
-.proyectos {
-  text-align: center;
 }
 
 .projects-grid {
@@ -356,13 +391,9 @@ section.visible {
   padding: 2rem 1.5rem;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin-bottom: 120px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
@@ -373,34 +404,16 @@ section.visible {
 .project-card h3 {
   font-size: 1.4rem;
   color: var(--accent);
+  text-align: center;
   margin-bottom: 0.5rem;
-  align-self: center;
 }
 
 .project-card p {
   font-size: 0.95rem;
   color: var(--text-light);
   line-height: 1.6;
-  align-self: center;
+  text-align: center;
   margin-bottom: 1.2rem;
-  text-align: -webkit-center;
-}
-
-.btn-sm {
-  background: var(--primary);
-  color: #fff;
-  padding: 0.5rem 1rem;
-  font-size: 0.85rem;
-  border-radius: var(--radius);
-  font-weight: 500;
-  transition: background 0.3s ease;
-  align-self: flex-start;
-  text-decoration: none;
-  align-self: center;
-}
-
-.btn-sm:hover {
-  background: var(--primary-dark);
 }
 
 form {
@@ -434,7 +447,6 @@ form button {
   font-weight: 600;
   cursor: pointer;
   transition: background 0.3s ease;
-  margin-bottom: 165px;
 }
 
 form button:hover {
@@ -444,7 +456,114 @@ form button:hover {
 footer {
   text-align: center;
   font-size: 0.9rem;
-  padding: 2rem;
   color: var(--text-light);
   border-top: 1px solid #1e293b;
+}
+
+.page-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .hero,
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .avatar-glow {
+    width: 240px;
+    height: 240px;
+  }
+
+  .sobre-mi-extra {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .btn,
+  .btn-cv {
+    display: block;
+    width: 100%;
+    margin: 0.5rem auto;
+    text-align: center;
+    position: static;
+  }
+
+  .sobre-mi-content {
+    flex-direction: column;
+  }
+
+  .logo {
+    margin-right: 270px;
+  }
+
+  .skills-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--bg-light);
+    padding: 1.2rem 0;
+    animation: dropdown 0.3s ease forwards;
+    border-top: 1px solid #1e293b;
+  }
+
+  .section-title-aboutme {
+    text-align: center;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    padding: 0.8rem 0;
+    text-align: center;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+  }
+
+  @keyframes dropdown {
+    from {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
