@@ -378,6 +378,7 @@ section.visible {
   width: 48px;
   height: 48px;
   margin-bottom: 1rem;
+  justify-self: center;
 }
 
 .skill-card h3 {
