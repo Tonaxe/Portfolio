@@ -136,12 +136,17 @@ section.visible {
   }
 }
 
-.section-title,
-.section-title-aboutme {
+.section-title {
   font-size: 2rem;
   color: var(--accent);
   margin-bottom: 2rem;
   text-align: center;
+}
+
+.section-title-aboutme {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 2rem;
 }
 
 .hero {
