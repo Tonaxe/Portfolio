@@ -260,14 +260,11 @@ section.visible {
   color: var(--text);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(4px);
-  position: absolute;
-  overflow: hidden;
   margin-left: 20px;
 }
 
 .btn-cv::before {
   content: "";
-  position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
